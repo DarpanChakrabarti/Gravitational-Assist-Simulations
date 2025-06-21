@@ -25,7 +25,7 @@ The project models hyperbolic flybys and gravitational assist maneuvers based on
 
 ### 🔧 Requirements
 
-- Python 3.6+
+- Recommended Python version: 3.8+
 - `numpy`
 - `matplotlib`
 
