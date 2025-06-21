@@ -17,7 +17,7 @@ The project models hyperbolic flybys and gravitational assist maneuvers based on
 | `Trajectory Comparison.py`               | Overlays both flyby trajectories (Figure 4c) |
 | `DefAngle vs b.py`                       | Plots deflection angle vs. impact parameter (Figure 5a) |
 | `DefAngle vs Vinf.py`                    | Plots deflection angle vs. asymptotic velocity (Figure 5b) |
-| `README.md`                              | You're reading it! Project overview and instructions. |
+| `README.md`                              | Project overview and instructions. |
 
 ---
 
