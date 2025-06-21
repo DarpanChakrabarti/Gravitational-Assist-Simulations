@@ -35,5 +35,5 @@ The project models hyperbolic flybys and gravitational assist maneuvers based on
 Install dependencies using:
 
 ```bash
-pip install -r requirements.txt
+pip install
 
