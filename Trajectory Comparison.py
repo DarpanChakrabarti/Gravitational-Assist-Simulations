@@ -57,10 +57,10 @@ vinf = 8.949e3          # Asymptotic incoming speed (m/s)
 b = 11.261e6             # Impact parameter (m) 
 x2 , y2 = algo(b, vinf)
 
-# Plot the trajectory
+# Plot the trajectory of Cassini and Galileo I
 plt.figure(figsize=(8, 8))
-plt.plot(np.array(x1)/1e3, np.array(y1)/1e3, label='Trajectory of Cassini')  # Position in km
-plt.plot(np.array(x2)/1e3, np.array(y2)/1e3, label='Trajectory of Galileo I')  # Position in km
+plt.plot(np.array(x1)/1e3, np.array(y1)/1e3, label='Trajectory of Cassini')
+plt.plot(np.array(x2)/1e3, np.array(y2)/1e3, label='Trajectory of Galileo I') 
 
 # Add the planet as a filled circle
 circle = plt.Circle((0,0),planet_radius/1e3,color='r',alpha=0.2,label='Planet Surface')
