@@ -29,15 +29,15 @@ def algo(b, vinf):
 
     # Numerical integration using Euler's method
     for i in range(n_steps):
-        r = np.sqrt(x[-1]**2 + y[-1]**2)              # Distance from the planet
-        ax = -mu * x[-1] / r**3                       # Acceleration in x due to gravity
-        ay = -mu * y[-1] / r**3                       # Acceleration in y due to gravity
+        r = np.sqrt(x[-1]**2 + y[-1]**2)            # Distance from the planet
+        ax = -mu * x[-1] / r**3                     # Acceleration in x due to gravity
+        ay = -mu * y[-1] / r**3                     # Acceleration in y due to gravity
 
-        vx_new = vx[-1] + ax * dt                     # Update velocity in x
-        vy_new = vy[-1] + ay * dt                     # Update velocity in y
+        vx_new = vx[-1] + ax * dt                   # Update velocity in x
+        vy_new = vy[-1] + ay * dt                   # Update velocity in y
 
-        x_new = x[-1] + vx_new * dt                   # Update position in x
-        y_new = y[-1] + vy_new * dt                   # Update position in y
+        x_new = x[-1] + vx_new * dt                 # Update position in x
+        y_new = y[-1] + vy_new * dt                 # Update position in y
 
         # Append updated values to the lists
         x.append(x_new)
@@ -68,10 +68,13 @@ plt.axis('equal')
 plt.legend()
 plt.show()
 
-# Calculation of deflection angle
+# Calculation of deflection angle and velocity gain
 alpha2 = (b**2 * vinf**4) / (mu)**2
 alpha2 = (1 + alpha2)**0.5
 alpha2 = 1 / alpha2
+
+delv = (2*vinf*alpha2)/1e3
 deflection_deg = (2 * np.arcsin(alpha2) * 180) / np.pi
 
+print("Velocity gain: ", delv) # In km/s
 print("Deflection angle:", deflection_deg)  # In degrees
