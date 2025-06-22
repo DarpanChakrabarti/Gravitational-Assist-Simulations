@@ -7,9 +7,9 @@ M = 5.972e24            # Mass of the Earth (kg)
 mu = G * M              # Standard gravitational parameter (m^3 s^-2)
 planet_radius = 6.371e6 # Radius of the Earth (m)
 # Time step and duration
-dt = 1                  # Time step (s)
-n_steps = 10000         # Number of steps
-x0 = -5e7               # Initial x-position (m), far left from the planet
+dt = 0.01                  # Time step (s)
+n_steps = int(7e6)         # Number of steps
+x0 = -5e8               # Initial x-position (m), far left from the planet
 vy0 = 0                 # Initial y-velocity (m/s), no vertical velocity
 
 def algo(b, vinf):
@@ -48,7 +48,7 @@ def algo(b, vinf):
     return x, y # Returning the list of x and y values
 
 vinf = 16.01e3          # Asymptotic incoming speed (m/s)
-b = 8.973e6             # Impact parameter (m)
+b = 8.973e6             # Impact parameter (m) 
 x1 , y1 = algo(b, vinf)
 
 # Plot the trajectory
@@ -78,3 +78,12 @@ deflection_deg = (2 * np.arcsin(alpha2) * 180) / np.pi
 
 print("Velocity gain: ", delv) # In km/s
 print("Deflection angle:", deflection_deg)  # In degrees
+
+# Numerical calculation of the deflection angle
+yvals = abs(y1[-1] - y1[-2])
+xvals = abs(x1[-1] - x1[-2])
+deg = np.arctan(yvals/xvals)
+deg = (deg*180)/np.pi
+
+print("Numerically calculated value of deflection angle: ", deg)
+print("Percentage error: ", ((deflection_deg - deg)/deflection_deg)*100)
