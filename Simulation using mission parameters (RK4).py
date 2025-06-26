@@ -134,8 +134,8 @@ final_y_change = y_trajectory[-1] - y_trajectory[-2]
 numerical_deflection_angle = np.arctan2(abs(final_y_change), abs(final_x_change)) * (180/np.pi)
 
 # Display results
-print(f"Theoretical deflection angle:", theoretical_deflection_angle, "degrees")
-print(f"Numerical deflection angle:", numerical_deflection_angle, "degrees")
+print("Theoretical deflection angle:", theoretical_deflection_angle, "degrees")
+print("Numerical deflection angle:", numerical_deflection_angle, "degrees")
 difference_percentage = (abs(theoretical_deflection_angle - numerical_deflection_angle) / 
                         theoretical_deflection_angle * 100)
 print("Percentage difference: ", difference_percentage)
